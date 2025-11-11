@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="About Dr. Aziz Ahmed - AI Consultant, UAB Professor, and Healthcare Informatics Expert" name="description"/>
+<title>About | Dr. Aziz Ahmed AI Consulting</title>
+<style>
+    :root{
+      --primary:#0A1931;
+      --accent:#00A8E8;
+      --text:#1A1A1A;
+      --light:#F5F7FA;
+      --white:#FFFFFF;
+      --gradient:linear-gradient(135deg,var(--primary) 0%,#1E3A5F 100%);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+      line-height:1.6;color:var(--text);background:var(--white);
+    }
+    .container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+    /* Header */
+    header{background:var(--white);box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+    .logo{font-size:1.5rem;font-weight:700;color:var(--primary);text-decoration:none}
+    nav ul{list-style:none;display:flex;gap:2rem;align-items:center}
+    nav a{color:var(--primary);text-decoration:none;font-weight:500;transition:color .2s}
+    nav a:hover,nav a.active{color:var(--accent)}
+    .nav-cta{background:var(--accent);color:#fff !important;padding:.5rem 1.2rem;border-radius:8px;transition:all .2s}
+    .nav-cta:hover{background:#008FC8;transform:translateY(-2px)}
+
+    /* Page header */
+    .page-header{background:var(--gradient);color:#fff;padding:4rem 0;text-align:center}
+    .page-header h1{font-size:2.4rem;margin-bottom:1rem}
+
+    /* About section */
+    .about-section{padding:4rem 0;background:#fff}
+    .about-grid{display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:start;margin-bottom:3rem}
+
+    /* Rectangular photo card — no circle */
+    .profile-container{position:sticky;top:100px}
+    .profile-card{
+      background:#fff;border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.12);
+      padding:16px; /* creates the white border look */
+      max-width:380px;
+    }
+    .profile-img{
+      display:block;width:100%;height:auto;
+      border-radius:12px;               /* soft rectangular corners */
+      object-fit:cover;object-position:center 18%;
+      box-shadow:0 2px 12px rgba(0,0,0,.08);
+    }
+
+    .contact-info{background:var(--light);padding:1.25rem;border-radius:10px;margin-top:1.25rem}
+    .contact-info h3{color:var(--primary);margin-bottom:.75rem}
+    .contact-info p{margin:.25rem 0}
+
+    .bio-content h2{color:var(--primary);margin-bottom:1rem}
+    .bio-content p{margin-bottom:1rem;font-size:1.05rem}
+
+    .credentials{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.25rem 0}
+    .badge{background:var(--accent);color:#fff;padding:.3rem .8rem;border-radius:15px;font-size:.85rem;font-weight:600}
+
+    /* Experience timeline */
+    .experience-section{padding:4rem 0;background:var(--light)}
+    .section-title{text-align:center;font-size:2rem;margin-bottom:3rem;color:var(--primary)}
+    .timeline{position:relative;max-width:800px;margin:0 auto}
+    .timeline::before{content:'';position:absolute;left:50%;transform:translateX(-50%);width:2px;height:100%;background:var(--accent)}
+    .timeline-item{
+      position:relative;padding:1.5rem;background:#fff;border-radius:10px;margin-bottom:2rem;
+      width:calc(50% - 2rem);box-shadow:0 2px 10px rgba(0,0,0,.1)
+    }
+    .timeline-item:nth-child(even){margin-left:calc(50% + 2rem)}
+    .timeline-item::before{content:'';position:absolute;width:14px;height:14px;background:var(--accent);border-radius:50%;top:1.8rem}
+    .timeline-item:nth-child(odd)::before{right:-2.3rem}
+    .timeline-item:nth-child(even)::before{left:-2.3rem}
+    .timeline-item h3{color:var(--primary);margin-bottom:.4rem}
+    .timeline-date{color:var(--accent);font-weight:600;font-size:.9rem}
+
+    /* Expertise */
+    .expertise-section{padding:4rem 0;background:#fff}
+    .expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+    .expertise-card{text-align:center;padding:2rem;background:var(--light);border-radius:10px}
+    .expertise-card h3{color:var(--primary);margin:1rem 0}
+    .expertise-icon{font-size:3rem}
+
+    /* Education */
+    .education-section{padding:4rem 0;background:var(--gradient);color:#fff}
+    .education-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+    .education-card{background:rgba(255,255,255,.1);padding:1.5rem;border-radius:10px;backdrop-filter:blur(10px)}
+    .education-card h3{color:var(--accent);margin-bottom:.5rem}
+
+    /* CTA */
+    .cta-section{padding:4rem 0;background:var(--primary);color:#fff;text-align:center}
+    .btn{padding:1rem 2rem;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;font-size:1.1rem;background:#fff;color:var(--primary);margin-top:1rem}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.2)}
+    .btn-download{background:var(--accent);color:#fff;margin-right:1rem}
+
+    /* Footer */
+    footer{background:var(--primary);color:#fff;padding:3rem 0 2rem;border-top:1px solid rgba(255,255,255,.1)}
+    .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:2rem}
+    .footer-section h4{margin-bottom:1rem;color:var(--accent)}
+    .footer-section ul{list-style:none}
+    .footer-section a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s}
+    .footer-section a:hover{opacity:1}
+    .footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);opacity:.85}
+
+    /* Mobile */
+    @media (max-width:900px){
+      .about-grid{grid-template-columns:1fr;align-items:center}
+      .profile-container{position:static}
+      .profile-card{margin:0 auto}
+    }
+    @media (max-width:768px){
+      nav ul{flex-direction:column;gap:1rem}
+      .timeline::before{left:0}
+      .timeline-item{width:100%;margin-left:2rem !important}
+      .timeline-item::before{left:-2.3rem !important;right:auto !important}
+    }
+  </style>
+<style>
+/* Injected shared header styles */
+:root{
+  --primary:#0A1931;
+  --accent:#00A8E8;
+  --text:#1A1A1A;
+  --light:#F5F7FA;
+  --white:#FFFFFF;
+}
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(140%) blur(6px);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-size:1.5rem;font-weight:700;color:var(--primary);text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:2rem;align-items:center}
+.nav a{color:var(--primary);text-decoration:none;font-weight:500;transition:color .2s}
+.nav a:hover,.nav a.active{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff !important;padding:.6rem 1.2rem;border-radius:8px;transition:all .2s;min-height:44px;display:inline-flex;align-items:center}
+.nav-cta:hover{background:#008FC8;transform:translateY(-1px)}
+.nav-toggle{display:none;background:transparent;border:0;width:44px;height:44px;padding:0;margin-left:auto;cursor:pointer}
+.nav-toggle .bar{display:block;width:24px;height:2px;margin:5px auto;background:var(--primary);transition:transform .3s,opacity .3s}
+@media (max-width:920px){
+  .container{padding:0 1rem}
+  .nav-toggle{display:inline-block}
+  .nav-links{
+    position:fixed;left:0;right:0;top:64px;background:#fff;
+    max-height:0;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:max-height .3s ease;display:grid;gap:0
+  }
+  .nav-links.open{max-height:70vh}
+  .nav-links li{border-bottom:1px solid #EEF1F5}
+  .nav-links a{display:block;padding:14px 1.25rem;font-size:1.05rem}
+  .nav-cta{margin:.5rem 1rem 1rem;text-align:center}
+  body.no-scroll{overflow:hidden}
+}
+</style><style>
+/* === About page company layout === */
+:root{ --primary:#0A1931; --accent:#00A8E8; --text:#1A1A1A; --light:#F5F7FA; --white:#FFFFFF; }
+.section{padding:3rem 0;}
+.hero-about{background:var(--gradient, linear-gradient(135deg, var(--primary) 0%, #1E3A5F 100%)); color:#fff; padding:3.5rem 0 3rem;}
+.hero-about h1{font-size:2.2rem;margin-bottom:.5rem}
+.hero-about p{opacity:.95;max-width:900px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.25rem}
+.card{background:#fff;border-radius:12px;border:1px solid #e9eef5;box-shadow:0 6px 18px rgba(8,15,52,.06);padding:1.25rem}
+.card h3{color:var(--primary);margin-bottom:.5rem;font-size:1.1rem}
+.badge-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.badge{background:#e6f6ff;color:#167fb1;border-radius:999px;padding:.3rem .6rem;font-weight:700;font-size:.8rem}
+.columns-what{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.columns-what .card p{margin:.35rem 0 0}
+.section h2{font-size:1.6rem;color:var(--primary);margin-bottom:1rem;text-align:center}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+@media (max-width: 900px){
+  .cards{grid-template-columns:1fr}
+  .columns-what{grid-template-columns:1fr}
+}
+</style></head>
+<body>
+<!-- Navigation -->
+<header>
+<nav class="nav container">
+<a class="logo" href="index.html">Toledo Academy <span style="font-size: 0.6rem; font-weight: 400; opacity: 0.7; display: block; line-height: 1;">For AI & Business Transformation</span></a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+<ul class="nav-links" id="navLinks">
+<li><a class="active" href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="case-studies.html">Case Studies</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="founder.html">Founder</a></li>
+<li><a class="nav-cta" href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+</header>
+<section class="section">
+<div class="container">
+<h2>What We Do</h2>
+<div class="columns-what">
+<div class="card">
+<h3>AI Enablement for Educators</h3>
+<p>Hands‑on workshops and templates that align with classroom outcomes and district policies.</p>
+</div>
+<div class="card">
+<h3>AI Consulting for Small Business</h3>
+<p>Automation and analytics tailored to your current tools—email, CRM, spreadsheets, and more.</p>
+</div>
+<div class="card">
+<h3>Research Translation</h3>
+<p>Turn validated methods into deployable workflows and training that teams can own.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="cards">
+<div class="card">
+<h3>Our Vision</h3>
+<p>AI literacy and enablement should be accessible to every classroom, team, and small business—so learning and work are more effective, equitable, and future‑ready.</p>
+</div>
+<div class="card">
+<h3>Our Mission</h3>
+<p>Translate proven AI research and best practices into simple, practical solutions that educators and teams can adopt quickly without big budgets or heavy IT.</p>
+</div>
+<div class="card">
+<h3>Our Approach</h3>
+<p>We prioritize clarity, security, and measurable outcomes. We pilot quickly, train teams, and document workflows so improvements persist after delivery.</p>
+<div class="badge-row">
+<span class="badge">Practical</span>
+<span class="badge">Ethical</span>
+<span class="badge">Documented</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hero-about">
+<div class="container">
+<h1>About Toledo Academy</h1>
+<p>Toledo Academy helps schools, educators, and small businesses integrate practical AI tools and training. Our focus is on clear, ethical, and effective enablement—so people spend less time on repetitive work and more time learning, teaching, and building.</p>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="case-studies.html">Case Studies</a></li>
+<li><a href="research.html">Research</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Services</h4>
+<ul>
+<li><a href="services.html#automation">AI Automation</a></li>
+<li><a href="services.html#healthcare">Healthcare AI</a></li>
+<li><a href="services.html#analytics">Analytics</a></li>
+<li><a href="services.html#training">Training</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Contact</h4>
+<ul>
+<li>📧 <a href="/cdn-cgi/l/email-protection#dc98ae9db4b1b9b89ca8b3b0b9b8b3bdbfbdb8b9b1a5f2bfb3b1"><span class="__cf_email__" data-cfemail="2b6f596a43464e4f6b5f44474e4f444a484a4f4e465205484446">[email&#160;protected]</span></a></li>
+<li>📱 (607) 232-0242</li>
+<li>📍 Birmingham, AL</li>
+<li><a href="https://www.linkedin.com/in/abdulaziz-ahmed-a329a460/">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Dr. Abdulaziz Ahmed AI Consulting. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelec

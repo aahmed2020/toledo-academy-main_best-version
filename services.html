@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Toledo Academy Services - AI automation for small business and healthcare, plus team training" name="description"/>
+  <title>Services | Toledo Academy</title>
+  <style>
+    :root {
+      --primary: #0A1931;
+      --accent: #00A8E8;
+      --text: #1A1A1A;
+      --light: #F5F7FA;
+      --white: #FFFFFF;
+      --gradient: linear-gradient(135deg, var(--primary) 0%, #1E3A5F 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* HEADER */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: saturate(140%) blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 64px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover, .nav a.active {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+      font-weight: 600;
+    }
+
+    .nav-cta:hover {
+      background: #008FC8;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+    }
+
+    .nav-toggle .bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px auto;
+      background: var(--primary);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--gradient);
+      color: #fff;
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* SERVICES DETAIL SECTION */
+    .services-detail {
+      padding: 5rem 0;
+      background: #fff;
+    }
+
+    .service-detail-item {
+      margin-bottom: 4rem;
+      padding: 3rem;
+      background: var(--light);
+      border-radius: 14px;
+      border-left: 5px solid var(--accent);
+    }
+
+    .service-detail-item h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    .service-detail-item .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .service-description {
+      margin-bottom: 1.5rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .service-benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .benefit-item {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .benefit-item h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .benefit-item p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .process-steps {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .process-steps h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .step {
+      display: flex;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      background: var(--accent);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    .step-content p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* PRICING/PACKAGES */
+    .packages-section {
+      padding: 5rem 0;
+      background: var(--light);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .package-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .package-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .package-card.featured {
+      border-color: var(--accent);
+      transform: scale(1.02);
+    }
+
+    .package-name {
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .package-features {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .package-features li {
+      padding: 0.6rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .package-features li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .package-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: all 0.2s;
+    }
+
+    .package-cta:hover {
+      background: #008FC8;
+      transform: translateY(-2px);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 4rem 0;
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.2s;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: #008FC8;
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      padding: 3rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .footer-section a {
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+      display: block;
+      padding: 0.25rem 0;
+    }
+
+    .footer-section a:hover {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      opacity: 0.8;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* MOBILE */
+    @media (max-width: 920px) {
+      .container { padding: 0 1rem; }
+      .nav-toggle { display: inline-block; }
+      .nav-links {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 64px;
+        background: #fff;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        display: grid;
+        gap: 0;
+      }
+      .nav-links.open { max-height: 70vh; }
+      .nav-links li { border-bottom: 1px solid #EEF1F5; }
+      .nav-links a { display: block; padding: 14px 1.25rem; font-size: 1.05rem; }
+      .nav-cta { margin: 0.5rem 1rem 1rem; }
+      body.no-scroll { overflow: hidden; }
+
+      .page-header { padding: 3rem 0; }
+      .page-header h1 { font-size: 1.8rem; }
+      .service-detail-item { padding: 2rem; }
+      .service-benefits { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; }
+      .package-card.featured { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="nav container">
+      <a class="logo" href="index.html">Toledo Academy <span style="font-size: 0.6rem; font-weight: 400; opacity: 0.7; display: block; line-height: 1;">For AI & Business Transformation</span></a>
+      <button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="founder.html">Founder</a></li>
+        <li><a class="nav-cta" href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>Automation first. Training included. Real results.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
+  <section class="services-detail">
+    <div class="container">
+      
+      <!-- SERVICE 1: BUSINESS AUTOMATION -->
+      <div class="service-detail-item" id="automation">
+        <h2>⚙️ AI Automation for Small Business</h2>
+        <p class="subtitle">Eliminate repetitive work. Save 15+ hours per week.</p>
+        
+        <div class="service-description">
+          <p>Stop wasting time on manual tasks. We automate email workflows, CRM processes, reporting, and data entry using your existing tools—Gmail, Zapier, Make.com, Power Automate, and more.</p>
+          <p>No expensive new software. No complex setup. Just practical automation that works with what you've already got.</p>
+        </div>
+
+        <div class="service-benefits">
+          <div class="benefit-item">
+            <h4>📧 Email Automation</h4>
+            <p>Smart routing, customer triage, auto-drafting—reduce manual email work by 40%+</p>
+          </div>
+          <div class="benefit-item">
+            <h4>📊 Data Workflows</h4>
+            <p>Automated reporting, spreadsheet updates, CRM sync, and dashboards</p>
+          </div>
+          <div class="benefit-item">
+            <h4>💰 Fast ROI</h4>
+            <p>3–6 month payback on typical engagements, often sooner</p>
+          </div>
+          <div class="benefit-item">
+            <h4>🔧 Your Tools</h4>
+            <p>Works with Zapier, Make.com, Power Automate, Airtable, and more</p>
+          </div>
+        </div>
+
+        <div class="process-steps">
+          <h3>How We Do It</h3>
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Audit Your Workflow (1 week)</h4>
+              <p>We map your processes, tools, and pain points. Identify 2–3 high-impact automation opportunities.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Design the Solution (1 week)</h4>
+              <p>Show you the approach, estimate impact, review with your team.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Build & Deploy (2-4 weeks)</h4>
+              <p>Set up automation, test thoroughly, document everything.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Train & Support (1 week + 30 days)</h4>
+              <p>Train your team, answer questions, optimize based on feedback.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 2: HEALTHCARE & CLINICS -->
+      <div class="service-detail-item" id="healthcare">
+        <h2>🏥 AI for Healthcare & Clinics</h2>
+        <p class="subtitle">Reduce admin burden. Improve patient care.</p>
+        
+        <div class="service-description">
+          <p>Healthcare teams are drowning in administrative work. We automate patient communication, appointment scheduling, data entry, and reporting—all HIPAA-compliant and built for your clinic's workflow.</p>
+          <p>More time for patient care. Less time on paperwork.</p>
+        </div>
+
+        <div class="service-benefits">
+          <div class="benefit-item">
+            <h4>👥 Patient Communication</h4>
+            <p>Automated appointment reminders, follow-ups, and patient intake</p>
+          </div>
+          <div class="benefit-item">
+            <h4>📅 Scheduling Automation</h4>
+            <p>Intelligent scheduling, no-show reduction, and waitlist optimization</p>
+          </div>
+          <div class="benefit-item">
+            <h4>📋 Data Entry Reduction</h4>
+            <p>Auto-populate records, sync systems, reduce manual documentation</p>
+          </div>
+          <div class="benefit-item">
+            <h4>🔒 HIPAA Compliant</h4>
+            <p>All workflows meet healthcare privacy and security standards</p>
+          </div>
+        </div>
+
+        <div class="process-steps">
+          <h3>Healthcare Implementation</h3>
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Clinic Assessment (1-2 weeks)</h4>
+              <p>Understand your workflows, EMR system, staffing, and compliance requirements.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Solution Design (1 week)</h4>
+              <p>Design HIPAA-compliant workflows that fit your clinic's needs.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Pilot & Optimize (2-4 weeks)</h4>
+              <p>Test with one department, gather feedback, refine the workflow.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Full Rollout & Training (1-2 weeks)</h4>
+              <p>Deploy across your clinic, train staff, provide 30-day support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 3: TEAM TRAINING -->
+      <div class="service-detail-item" id="training">
+        <h2>🎓 AI Training for Your Team</h2>
+        <p class="subtitle">Help your team confidently use AI tools.</p>
+        
+        <div class="service-description">
+          <p>AI is only valuable if your team actually uses it. We provide hands-on workshops, best practices, and ongoing support so your team is confident, safe, and effective with AI tools.</p>
+          <p>Training is included with all our automation projects. Or book standalone workshops.</p>
+        </div>
+
+        <div class="service-benefits">
+          <div class="benefit-item">
+            <h4>👥 Hands-On Workshops</h4>
+            <p>In-person or remote training tailored to your team's needs</p>
+          </div>
+          <div class="benefit-item">
+            <h4>🛠️ Tools & Best Practices</h4>
+            <p>Learn ChatGPT, Claude, automation tools, and real-world applications</p>
+          </div>
+          <div class="benefit-item">
+            <h4>🔒 Safety & Ethics</h4>
+            <p>Responsible AI use, data privacy, and company policies</p>
+          </div>
+          <div class="benefit-item">
+            <h4>📚 Resources & Support</h4>
+            <p>Playbooks, templates, and ongoing Q&A for 30 days after training</p>
+          </div>
+        </div>
+
+        <div class="process-steps">
+          <h3>Training Approach</h3>
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Assessment (Initial call)</h4>
+              <p>Understand your team's skill level, goals, and learning preferences.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Customize Content</h4>
+              <p>Design training materials relevant to your actual workflows.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Hands-On Workshop</h4>
+              <p>Interactive session with live demos, practice, and Q&A (half or full day).</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Follow-Up Support</h4>
+              <p>Email support and resources for 30 days after training.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages-section">
+    <div class="container">
+      <h2 class="section-title">Choose Your Engagement</h2>
+      <div class="packages-grid">
+        <div class="package-card">
+          <div class="package-name">Quick Sprint</div>
+          <div class="package-desc">Perfect for: Focused automation or single training session</div>
+          <ul class="package-features">
+            <li>1–2 week engagement</li>
+            <li>Single workflow or one training session</li>
+            <li>Full documentation included</li>
+            <li>Email support (7 days after)</li>
+          </ul>
+          <a class="package-cta" href="contact.html">Learn More</a>
+        </div>
+
+        <div class="package-card featured">
+          <div class="package-name">✨ Full Automation Project</div>
+          <div class="package-desc">Most popular: Complete automation with training</div>
+          <ul class="package-features">
+            <li>4–8 week engagement</li>
+            <li>2–3 automation workflows</li>
+            <li>Full team training (in-person or remote)</li>
+            <li>30-day support & optimization</li>
+            <li>Custom playbooks & templates</li>
+          </ul>
+          <a class="package-cta" href="contact.html">Get Started</a>
+        </div>
+
+        <div class="package-card">
+          <div class="package-name">Custom Build</div>
+          <div class="package-desc">For: Complex implementations or healthcare projects</div>
+          <ul class="package-features">
+            <li>Fully customized scope & timeline</li>
+            <li>Multiple workflows or systems</li>
+            <li>Extended training & support</li>
+            <li>Monthly check-ins & optimization</li>
+          </ul>
+          <a class="package-cta" href="contact.html">Discuss Your Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Automate Your Business?</h2>
+      <p>Let's talk about what's possible for your team. No obligation—just practical advice.</p>
+      <a class="btn" href="contact.html">Schedule a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="founder.html">Meet the Founder</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>📧 <a href="mailto:DrAhmed@toledoacademy.com">DrAhmed@toledoacademy.com</a></li>
+            <li>📱 <a href="tel:+16072320242">(607) 232-0242</a></li>
+            <li>📍 Birmingham, AL</li>
+            <li><a href="https://www.linkedin.com/in/abdulaziz-ahmed-a329a460/" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Toledo Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('no-scroll', open);
+      });
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('no-scroll');
+      }));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Real AI automation success stories - See how small businesses save time and money with Dr. Aziz Ahmed's AI consulting" name="description"/>
+<title>Case Studies | Dr. Aziz Ahmed AI Consulting</title>
+<style>
+        :root {
+            --primary: #0A1931;
+            --accent: #00A8E8;
+            --text: #1A1A1A;
+            --light: #F5F7FA;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, #1E3A5F 100%);
+            --success: #2e7d32;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--white);
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
+        }
+        
+        /* Header and Navigation - Same as other pages */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            background: var(--accent);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background: #008FC8;
+            transform: translateY(-2px);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Case Studies Section */
+        .case-studies {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+        
+        .case-study {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .case-study-header {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+        
+        .client-info {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .client-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .results-box {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .results-box h4 {
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+        
+        .results-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .results-box li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .problem-solution h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .solution-step {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .solution-step h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial {
+            font-style: italic;
+            color: #666;
+            padding: 1rem;
+            border-left: 4px solid var(--accent);
+            margin-top: 1rem;
+            background: #f9f9f9;
+        }
+        
+        /* Common Solutions Grid */
+        .common-solutions {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .solution-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .solution-card h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 1.1rem;
+            background: white;
+            color: var(--primary);
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-section a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .case-study-header {
+                grid-template-columns: 1fr;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+/* Injected shared header styles (nav consistency) */
+:root{
+  --primary:#0A1931;
+  --accent:#00A8E8;
+  --text:#1A1A1A;
+  --light:#F5F7FA;
+  --white:#FFFFFF;
+}
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(140%) blur(6px);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-size:1.5rem;font-weight:700;color:var(--primary);text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:2rem;align-items:center}
+.nav a{color:var(--primary);text-decoration:none;font-weight:500;transition:color .2s}
+.nav a:hover,.nav a.active{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff !important;padding:.6rem 1.2rem;border-radius:8px;transition:all .2s;min-height:44px;display:inline-flex;align-items:center}
+.nav-cta:hover{background:#008FC8;transform:translateY(-1px)}
+.nav-toggle{display:none;background:transparent;border:0;width:44px;height:44px;padding:0;margin-left:auto;cursor:pointer}
+.nav-toggle .bar{display:block;width:24px;height:2px;margin:5px auto;background:var(--primary);transition:transform .3s,opacity .3s}
+@media (max-width:920px){
+  .container{padding:0 1rem}
+  .nav-toggle{display:inline-block}
+  .nav-links{
+    position:fixed;left:0;right:0;top:64px;background:#fff;
+    max-height:0;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:max-height .3s ease;display:grid;gap:0
+  }
+  .nav-links.open{max-height:70vh}
+  .nav-links li{border-bottom:1px solid #EEF1F5}
+  .nav-links a{display:block;padding:14px 1.25rem;font-size:1.05rem}
+  .nav-cta{margin:.5rem 1rem 1rem;text-align:center}
+  body.no-scroll{overflow:hidden}
+}
+</style></head>
+<body>
+<!-- Navigation -->
+<header>
+<nav class="nav container">
+<a class="logo" href="index.html">Toledo Academy <span style="font-size: 0.6rem; font-weight: 400; opacity: 0.7; display: block; line-height: 1;">For AI & Business Transformation</span></a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+<ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a class="active" href="case-studies.html">Case Studies</a></li><li><a href="about.html">About</a></li><li><a href="founder.html">Founder</a></li><li><a class="nav-cta" href="contact.html">Get Started</a></li></ul>
+</nav>
+</header>
+<!-- Page Header -->
+<section class="page-header">
+<div class="container">
+<h1>Real Success Stories</h1>
+<p>See how small businesses are saving 15-20 hours weekly with AI automation</p>
+</div>
+</section>
+<!-- Case Studies -->
+<section class="case-studies">
+<div class="container">
+<!-- Case Study 1 -->
+<div class="case-study">
+<div class="case-study-header">
+<div>
+<div class="client-info">
+<h3>Family Dental Clinic</h3>
+<p>Birmingham, AL</p>
+<p>12 employees</p>
+</div>
+<div class="results-box">
+<h4>Results Achieved</h4>
+<ul>
+<li>✓ 18 hours/week saved</li>
+<li>✓ 47% fewer no-shows</li>
+<li>✓ $4,200/month saved</li>
+<li>✓ ROI in 2 months</li>
+</ul>
+</div>
+</div>
+<div class="problem-solution">
+<h3>The Challenge</h3>
+<p>Dr. Sarah's dental practice was losing 3 hours daily to appointment scheduling, insurance verifications, and patient reminders. Staff was overwhelmed, and 20% of appointments were no-shows, directly impacting revenue.</p>
+</div>
+</div>
+<h3 style="color: var(--primary); margin-bottom: 1rem;">The AI Solution</h3>
+<div class="solution-step">
+<h4>Step 1: AI Phone Assistant</h4>
+<p>• Deployed a voice AI that answers calls 24/7 and books appointments directly into the practice management system<br/>
+                    • Handles FAQs about insurance, procedures, and office hours<br/>
+                    • Cost: $150/month (compared to $3,000/month for an additional receptionist)</p>
+</div>
+<div class="solution-step">
+<h4>Step 2: Smart Reminder System</h4>
+<p>• Automated text messages 3 days before appointments<br/>
+                    • AI follows up with phone calls for non-responders<br/>
+                    • Automatically fills cancelled slots from waitlist<br/>
+                    • Built with: Zapier + Twilio ($50/month)</p>
+</div>
+<div class="solution-step">
+<h4>Step 3: Insurance Verification Bot</h4>
+<p>• RPA bot logs into insurance portals automatically<br/>
+                    • Verifies coverage and eligibility before appointments<br/>
+                    • Alerts staff of any issues 24 hours in advance<br/>
+                    • Implementation time: 2 weeks</p>
+</div>
+<div class="testimonial">
+                    "We went from chaos to calm in just 6 weeks. My staff can now focus on patient care instead of phone tag. The AI handles after-hours calls perfectly, and we haven't missed a potential patient since." - Dr. Sarah M., Owner
+                </div>
+</div>
+<!-- Case Study 2 -->
+<div class="case-study">
+<div class="case-study-header">
+<div>
+<div class="client-info">
+<h3>HVAC Services LLC</h3>
+<p>Montgomery, AL</p>
+<p>8 technicians</p>
+</div>
+<div class="results-box">
+<h4>Results Achieved</h4>
+<ul>
+<li>✓ 15 hours/week saved</li>
+<li>✓ 60% faster quotes</li>
+<li>✓ 25% more jobs completed</li>
+<li>✓ $6,000/month revenue ↑</li>
+</ul>
+</div>
+</div>
+<div class="problem-solution">
+<h3>The Challenge</h3>
+<p>Tom's HVAC company was losing jobs because quotes took 2-3 days to prepare. Technicians spent evenings doing paperwork instead of billable work. Customer follow-ups were inconsistent, leading to lost opportunities.</p>
+</div>
+</div>
+<h3 style="color: var(--primary); margin-bottom: 1rem;">The AI Solution</h3>
+<div class="solution-step">
+<h4>Instant Quote Generator</h4>
+<p>• Technicians take photos of job site with phone<br/>
+                    • AI analyzes images and job requirements<br/>
+                    • Generates professional quote in 30 seconds<br/>
+                    • Customer receives quote before technician leaves<br/>
+                    • Technology: GPT-4 Vision API + custom pricing database</p>
+</div>
+<div class="solution-step">
+<h4>Automated CRM Pipeline</h4>
+<p>• AI reads all incoming emails and texts<br/>
+                    • Automatically updates customer records<br/>
+                    • Sends personalized follow-ups at optimal times<br/>
+                    • Alerts owner when quotes go cold<br/>
+                    • Setup: Gmail → AI → Google Sheets (simple, effective)</p>
+</div>
+<div class="solution-step">
+<h4>Smart Inventory Management</h4>
+<p>• AI learns usage patterns from past jobs<br/>
+                    • Predicts parts needed for upcoming week<br/>
+                    • Auto-orders before stock runs out<br/>
+                    • Eliminated emergency supply runs<br/>
+                    • Cost: $50/month automation platform</p>
+</div>
+<div class="testimonial">
+                    "We close 40% more deals now because customers get quotes instantly. Our guys love it - no more paperwork at night. It paid for itself in the first month." - Tom R., Owner
+                </div>
+</div>
+<!-- Case Study 3 -->
+<div class="case-study">
+<div class="case-study-header">
+<div>
+<div class="client-info">
+<h3>Johnson Law Office</h3>
+<p>Huntsville, AL</p>
+<p>3 attorneys, 2 staff</p>
+</div>
+<div class="results-box">
+<h4>Results Achieved</h4>
+<ul>
+<li>✓ 20 hours/week saved</li>
+<li>✓ 90% faster research</li>
+<li>✓ 2x client capacity</li>
+<li>✓ $8,000/month saved</li>
+</ul>
+</div>
+</div>
+<div class="problem-solution">
+<h3>The Challenge</h3>
+<p>This small law firm was turning away clients because attorneys spent 50% of their time on document review, intake forms, and basic research instead of billable work. Administrative tasks were overwhelming the small team.</p>
+</div>
+</div>
+<h3 style="color: var(--primary); margin-bottom: 1rem;">The AI Solution</h3>
+<div class="solution-step">
+<h4>AI Document Analyzer</h4>
+<p>• Upload any contract or legal document<br/>
+                    • AI extracts key dates, parties, and obligations in 30 seconds<br/>
+                    • Creates executive summary with risk flags<br/>
+                    • Trained on firm's specific document types<br/>
+                    • Built with: Custom GPT trained on 500+ firm documents</p>
+</div>
+<div class="solution-step">
+<h4>24/7 Client Intake System</h4>
+<p>• AI chatbot qualifies potential clients<br/>
+                    • Collects all necessary case information<br/>
+                    • Schedules consultations for viable cases<br/>
+                    • Sends retainer agreements automatically<br/>
+                    • Result: Never miss a potential client again</p>
+</div>
+<div class="solution-step">
+<h4>Legal Research Assistant</h4>
+<p>• Ask questions in plain English<br/>
+                    • AI searches case law and statutes<br/>
+                    • Provides summaries with proper citations<br/>
+                    • HIPAA and confidentiality compliant<br/>
+                    • Saves 5+ hours per case on research</p>
+</div>
+<div class="testimonial">
+                    "We can now handle twice as many cases with the same team. The AI does the grunt work perfectly, letting us focus on legal strategy and client relationships. Game changer." - Amanda K., Partner
+                </div>
+</div>
+</div>
+</section>
+<!-- Common Solutions -->
+<section class="common-solutions">
+<div class="container">
+<h2 class="section-title">Common AI Solutions for Any Small Business</h2>
+<div class="solutions-grid">
+<div class="solution-card">
+<h4>📧 Email Management</h4>
+<p><strong>Before:</strong> 2 hours/day sorting emails<br/>
+<strong>After:</strong> AI categorizes, drafts replies, flags urgent<br/>
+<strong>Time saved:</strong> 8-10 hours/week</p>
+</div>
+<div class="solution-card">
+<h4>📝 Invoice Processing</h4>
+<p><strong>Before:</strong> Manual data entry<br/>
+<strong>After:</strong> Scan → AI extracts → Auto-entry<br/>
+<strong>Accuracy:</strong> 99.5% (vs 92% manual)</p>
+</div>
+<div class="solution-card">
+<h4>📅 Smart Scheduling</h4>
+<p><strong>Before:</strong> Back-and-forth coordination<br/>
+<strong>After:</strong> AI handles all scheduling<br/>
+<strong>Result:</strong> Zero double-bookings</p>
+</div>
+<div class="solution-card">
+<h4>💬 Customer Service</h4>
+<p><strong>Before:</strong> Repetitive questions<br/>
+<strong>After:</strong> AI handles 70% of inquiries<br/>
+<strong>Available:</strong> 24/7 instant responses</p>
+</div>
+<div class="solution-card">
+<h4>📊 Automated Reports</h4>
+<p><strong>Before:</strong> Hours creating reports<br/>
+<strong>After:</strong> AI generates and sends automatically<br/>
+<strong>Frequency:</strong> Daily, weekly, or monthly</p>
+</div>
+<div class="solution-card">
+<h4>🔍 Data Entry</h4>
+<p><strong>Before:</strong> Manual copying from documents<br/>
+<strong>After:</strong> AI reads and enters instantly<br/>
+<strong>Speed:</strong> 50x faster, zero errors</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="cta-section">
+<div class="container">
+<h2>See How AI Can Transform YOUR Business</h2>
+<p>Get a custom AI roadmap showing exactly what's possible for your specific business</p>
+<a class="btn" href="contact.html">Get Your Free AI Assessment</a>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Services</h4>
+<ul>
+<li><a href="services.html#automation">AI Automation</a></li>
+<li><a href="services.html#healthcare">Healthcare AI</a></li>
+<li><a href="services.html#analytics">Analytics</a></li>
+<li><a href="services.html#training">Training</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Contact</h4>
+<ul>
+<li>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="357147745d58505175415a5950515a5456545150584c1b565a58">[email&#160;protected]</a></li>
+<li>📱 (607) 232-0242</li>
+<li>📍 Birmingham, AL</li>
+<li><a href="https://linkedin.com/in/aziz-ahmed-phd">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Dr. Abdulaziz Ahmed AI Consulting. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');

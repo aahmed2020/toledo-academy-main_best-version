@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Terms of Service for Toledo Academy" name="description"/>
+<title>Terms of Service | Toledo Academy</title>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+/* Injected shared header styles (nav consistency) */
+:root{
+  --primary:#0A1931;
+  --accent:#00A8E8;
+  --text:#1A1A1A;
+  --light:#F5F7FA;
+  --white:#FFFFFF;
+}
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(140%) blur(6px);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-size:1.5rem;font-weight:700;color:var(--primary);text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:2rem;align-items:center}
+.nav a{color:var(--primary);text-decoration:none;font-weight:500;transition:color .2s}
+.nav a:hover,.nav a.active{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff !important;padding:.6rem 1.2rem;border-radius:8px;transition:all .2s;min-height:44px;display:inline-flex;align-items:center}
+.nav-cta:hover{background:#008FC8;transform:translateY(-1px)}
+.nav-toggle{display:none;background:transparent;border:0;width:44px;height:44px;padding:0;margin-left:auto;cursor:pointer}
+.nav-toggle .bar{display:block;width:24px;height:2px;margin:5px auto;background:var(--primary);transition:transform .3s,opacity .3s}
+@media (max-width:920px){
+  .container{padding:0 1rem}
+  .nav-toggle{display:inline-block}
+  .nav-links{
+    position:fixed;left:0;right:0;top:64px;background:#fff;
+    max-height:0;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:max-height .3s ease;display:grid;gap:0
+  }
+  .nav-links.open{max-height:70vh}
+  .nav-links li{border-bottom:1px solid #EEF1F5}
+  .nav-links a{display:block;padding:14px 1.25rem;font-size:1.05rem}
+  .nav-cta{margin:.5rem 1rem 1rem;text-align:center}
+  body.no-scroll{overflow:hidden}
+}
+</style></head>
+<body>
+<header>
+<nav class="nav container">
+<a class="logo" href="index.html">Toledo Academy <span style="font-size: 0.6rem; font-weight: 400; opacity: 0.7; display: block; line-height: 1;">For AI & Business Transformation</span></a><button aria-expanded="false" aria-label="Open menu" class="nav-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+<ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="about.html">About</a></li><li><a href="founder.html">Founder</a></li><li><a class="nav-cta" href="contact.html">Contact Us</a></li></ul>
+</nav>
+</header>
+<section class="hero"><div class="container"><h1>Terms of Service</h1><p class="subtitle">The basics for using our site and services</p></div></section>
+<section class="about"><div class="container">
+<h2 class="section-title">Scope</h2>
+<p>These terms govern your use of Toledo Academy’s website and programs. By accessing or using our site, you agree to these terms.</p>
+<h3>Use of Content</h3>
+<p>Content on this website is provided for informational purposes. You may not republish without permission.</p>
+<h3>Engagements</h3>
+<p>Programs and consulting engagements are governed by separate written agreements that will control in case of conflict with these terms.</p>
+<h3>Confidentiality</h3>
+<p>We treat client materials as confidential and will use them only for the purposes of the engagement.</p>
+<h3>Limitation of Liability</h3>
+<p>To the maximum extent permitted by law, Toledo Academy is not liable for indirect or consequential damages arising from the use of our site or materials.</p>
+<h3>Contact</h3>
+<p>Questions about these terms? Email <a href="/cdn-cgi/l/email-protection#8feeeee7e2eaebbdcffaeeeda1eaebfa"><span class="__cf_email__" data-cfemail="9afbfbf2f7fffea8daeffbf8b4fffeef">[email&#160;protected]</span></a>.</p>
+</div></section>
+<footer>
+<div class="container footer-grid">
+<div><h4>Toledo Academy</h4><p>AI training and automation for small teams.</p></div>
+<div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="founder.html">Founder</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>© <span id="year"></span> Toledo Academy. All rights reserved.</p></div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');

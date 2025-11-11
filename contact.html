@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Contact Toledo Academy - Schedule a free consultation with Dr. Aziz Ahmed" name="description"/>
+  <title>Contact | Toledo Academy</title>
+  <style>
+    :root {
+      --primary: #0A1931;
+      --accent: #00A8E8;
+      --text: #1A1A1A;
+      --light: #F5F7FA;
+      --white: #FFFFFF;
+      --gradient: linear-gradient(135deg, var(--primary) 0%, #1E3A5F 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* HEADER */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: saturate(140%) blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 64px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover, .nav a.active {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+      font-weight: 600;
+    }
+
+    .nav-cta:hover {
+      background: #008FC8;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+    }
+
+    .nav-toggle .bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px auto;
+      background: var(--primary);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--gradient);
+      color: #fff;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+      padding: 4rem 0;
+      background: var(--light);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-container h2 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+
+    .form-container .form-subtitle {
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    .form-group.required label:after {
+      content: " *";
+      color: var(--accent);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e1e5e9;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-row .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-group {
+      margin: 1rem 0;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+
+    .checkbox-group input[type="checkbox"],
+    .checkbox-group input[type="radio"] {
+      width: auto;
+      margin-right: 0.75rem;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+      background: #008FC8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 168, 232, 0.3);
+    }
+
+    /* INFO CARD */
+    .info-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-left: 4px solid var(--accent);
+    }
+
+    .info-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .info-card p {
+      color: #555;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .contact-details {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e9eef5;
+    }
+
+    .detail-item {
+      margin: 1rem 0;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .detail-icon {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+
+    .detail-content h4 {
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .detail-content p {
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    .detail-content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .detail-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* SUCCESS MESSAGE */
+    .form-message {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .form-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
+    }
+
+    .form-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      padding: 3rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .footer-section a {
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+      display: block;
+      padding: 0.25rem 0;
+    }
+
+    .footer-section a:hover {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      opacity: 0.8;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* MOBILE */
+    @media (max-width: 920px) {
+      .container { padding: 0 1rem; }
+      .nav-toggle { display: inline-block; }
+      .nav-links {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 64px;
+        background: #fff;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        display: grid;
+        gap: 0;
+      }
+      .nav-links.open { max-height: 70vh; }
+      .nav-links li { border-bottom: 1px solid #EEF1F5; }
+      .nav-links a { display: block; padding: 14px 1.25rem; font-size: 1.05rem; }
+      .nav-cta { margin: 0.5rem 1rem 1rem; }
+      body.no-scroll { overflow: hidden; }
+
+      .page-header { padding: 3rem 0; }
+      .page-header h1 { font-size: 1.8rem; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="nav container">
+      <a class="logo" href="index.html">Toledo Academy <span style="font-size: 0.6rem; font-weight: 400; opacity: 0.7; display: block; line-height: 1;">For AI & Business Transformation</span></a>
+      <button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="founder.html">Founder</a></li>
+        <li><a class="nav-cta active" href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Let's Chat About Your Challenge</h1>
+      <p>Tell us about your situation. We'll respond within 24 hours with practical next steps.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-wrapper">
+        <!-- FORM -->
+        <div class="form-container">
+          <h2>Free Strategy Call</h2>
+          <p class="form-subtitle">No pressure—just practical advice tailored to your situation</p>
+          
+          <div class="form-message" id="formMessage"></div>
+
+          <form id="contactForm" method="POST" action="thank-you.html">
+            <!-- Name and Email Row -->
+            <div class="form-row">
+              <div class="form-group required">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="e.g., Sarah Johnson"/>
+              </div>
+              <div class="form-group required">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com"/>
+              </div>
+            </div>
+
+            <!-- Phone and Company Size Row -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(optional)"/>
+              </div>
+              <div class="form-group required">
+                <label for="companySize">Company/Organization Size</label>
+                <select id="companySize" name="companySize" required>
+                  <option value="">-- Select size --</option>
+                  <option value="solo">Solo / Self-employed</option>
+                  <option value="small">2–10 people</option>
+                  <option value="medium">11–50 people</option>
+                  <option value="large">51–200 people</option>
+                  <option value="xlarge">200+ people</option>
+                  <option value="school">K–12 School</option>
+                  <option value="university">University</option>
+                  <option value="nonprofit">Nonprofit</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Organization and Industry -->
+            <div class="form-row">
+              <div class="form-group required">
+                <label for="organization">Organization / Company Name</label>
+                <input type="text" id="organization" name="organization" required placeholder="e.g., Acme Corp"/>
+              </div>
+              <div class="form-group required">
+                <label for="industry">Industry / Sector</label>
+                <select id="industry" name="industry" required>
+                  <option value="">-- Select industry --</option>
+                  <option value="education">Education / School</option>
+                  <option value="healthcare">Healthcare</option>
+                  <option value="tech">Technology</option>
+                  <option value="nonprofit">Nonprofit</option>
+                  <option value="retail">Retail / E-commerce</option>
+                  <option value="finance">Finance / Insurance</option>
+                  <option value="professional">Professional Services</option>
+                  <option value="manufacturing">Manufacturing</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Main Challenge -->
+            <div class="form-group required">
+              <label for="challenge">What's Your Main Challenge?</label>
+              <select id="challenge" name="challenge" required>
+                <option value="">-- Select your biggest challenge --</option>
+                <option value="time">Too much time spent on repetitive work</option>
+                <option value="ai-training">Need to train team on AI basics</option>
+                <option value="automation">Want to automate specific workflows</option>
+                <option value="analytics">Need better dashboards and insights</option>
+                <option value="tool-integration">Tools don't work well together</option>
+                <option value="implementation">Have research we need to deploy</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group required">
+              <label for="message">Tell Us More About Your Situation</label>
+              <textarea id="message" name="message" required placeholder="What are you trying to accomplish? What's holding you back? What tools/systems do you use?"></textarea>
+            </div>
+
+            <!-- How They Heard About Us -->
+            <div class="form-group">
+              <label>How did you hear about us?</label>
+              <div class="checkbox-group">
+                <label>
+                  <input type="radio" name="source" value="search"/>
+                  Search engine
+                </label>
+              </div>
+              <div class="checkbox-group">
+                <label>
+                  <input type="radio" name="source" value="referral"/>
+                  Referral / Recommendation
+                </label>
+              </div>
+              <div class="checkbox-group">
+                <label>
+                  <input type="radio" name="source" value="linkedin"/>
+                  LinkedIn
+                </label>
+              </div>
+              <div class="checkbox-group">
+                <label>
+                  <input type="radio" name="source" value="other"/>
+                  Other
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Schedule Free Call</button>
+          </form>
+        </div>
+
+        <!-- INFO CARD -->
+        <div class="info-card">
+          <h3>What to Expect</h3>
+          <p>We'll schedule a 20–30 minute call to understand your situation and discuss what's possible.</p>
+          <p><strong>No sales pitch.</strong> No commitment. Just practical advice.</p>
+
+          <div class="contact-details">
+            <div class="detail-item">
+              <div class="detail-icon">⏱️</div>
+              <div class="detail-content">
+                <h4>Response Time</h4>
+                <p>We respond within 24 hours</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">📞</div>
+              <div class="detail-content">
+                <h4>Call Format</h4>
+                <p>Zoom or phone—your choice</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">💡</div>
+              <div class="detail-content">
+                <h4>Outcome</h4>
+                <p>Clear recommendations and next steps</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">✉️</div>
+              <div class="detail-content">
+                <h4>Direct Contact</h4>
+                <p><a href="/cdn-cgi/l/email-protection#94d0e6d5fcf9f1f0d4e0fbf8f1f0fbf5f7f5f0f1f9edbaf7fbf9"><span class="__cf_email__" data-cfemail="9bdfe9daf3f6feffdbeff4f7fefff4faf8fafffef6e2b5f8f4f6">[email&#160;protected]</span></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="founder.html">Meet the Founder</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>📧 <a href="/cdn-cgi/l/email-protection#733701321b1e161733071c1f16171c12101217161e0a5d101c1e"><span class="__cf_email__" data-cfemail="0f4b7d4e67626a6b4f7b60636a6b606e6c6e6b6a6276216c6062">[email&#160;protected]</span></a></li>
+            <li>📱 <a href="tel:+16072320242">(607) 232-0242</a></li>
+            <li>📍 Birmingham, AL</li>
+            <li><a href="https://www.linkedin.com/in/abdulaziz-ahmed-a329a460/" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Toledo Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('no-scroll', open);
+      });
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('no-scroll');
+      }));
+    }
+
+    // Form validation and submission
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic validation
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        if (!name || !email || !message) {
+          formMessage.innerHTML = 'Please fill in all required fields.';
+          formMessage.className = 'form-message e

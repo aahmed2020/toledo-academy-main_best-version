@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Thank you for contacting Dr. Aziz Ahmed AI Consulting" name="description"/>
+<title>Thank You | Dr. Aziz Ahmed AI Consulting</title>
+<style>
+        :root {
+            --primary: #0A1931;
+            --accent: #00A8E8;
+            --light: #F5F7FA;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            background: var(--light);
+            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .thank-you-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        a.btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        a.btn:hover {
+            background: #008FC8;
+        }
+    </style>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+/* Injected shared header styles (nav consistency) */
+:root{
+  --primary:#0A1931;
+  --accent:#00A8E8;
+  --text:#1A1A1A;
+  --light:#F5F7FA;
+  --white:#FFFFFF;
+}
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(140%) blur(6px);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-size:1.5rem;font-weight:700;color:var(--primary);text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:2rem;align-items:center}
+.nav a{color:var(--primary);text-decoration:none;font-weight:500;transition:color .2s}
+.nav a:hover,.nav a.active{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff !important;padding:.6rem 1.2rem;border-radius:8px;transition:all .2s;min-height:44px;display:inline-flex;align-items:center}
+.nav-cta:hover{background:#008FC8;transform:translateY(-1px)}
+.nav-toggle{display:none;background:transparent;border:0;width:44px;height:44px;padding:0;margin-left:auto;cursor:pointer}
+.nav-toggle .bar{display:block;width:24px;height:2px;margin:5px auto;background:var(--primary);transition:transform .3s,opacity .3s}
+@media (max-width:920px){
+  .container{padding:0 1rem}
+  .nav-toggle{display:inline-block}
+  .nav-links{
+    position:fixed;left:0;right:0;top:64px;background:#fff;
+    max-height:0;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:max-height .3s ease;display:grid;gap:0
+  }
+  .nav-links.open{max-height:70vh}
+  .nav-links li{border-bottom:1px solid #EEF1F5}
+  .nav-links a{display:block;padding:14px 1.25rem;font-size:1.05rem}
+  .nav-cta{margin:.5rem 1rem 1rem;text-align:center}
+  body.no-scroll{overflow:hidden}
+}
+</style></head>
+<body><header><nav class="nav container"><a class="logo" href="index.html">Toledo Academy <span style="font-size: 0.6rem; font-weight: 400; opacity: 0.7; display: block; line-height: 1;">For AI & Business Transformation</span></a><button aria-expanded="false" aria-label="Open menu" class="nav-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="about.html">About</a></li><li><a href="founder.html">Founder</a></li><li><a class="nav-cta" href="contact.html">Contact Us</a></li></ul></nav></header>
+<div class="thank-you-container">
+<h1>Thank You!</h1>
+<p>Your message has been received. I’ll review your request and contact you within 24 hours to schedule your consultation.</p>
+<p>Meanwhile, feel free to explore my <a href="case-studies.html">case studies</a> or learn more <a href="about.html">about my work</a>.</p>
+<a class="btn" href="index.html">Back to Home</a>
+</div>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle?.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('no-scroll', open);
+  });
+</script>
+</body></html>
+<script src="script.js"></script>
