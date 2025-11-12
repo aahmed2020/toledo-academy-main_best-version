@@ -1,38 +1,41 @@
-// Mobile menu toggle
-const btn = document.getElementById('menuBtn');
-const links = document.getElementById('navLinks');
-if (btn && links) {
-  btn.addEventListener('click', ()=>{
-    const open = links.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
-    links.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-  }));
-}
-
-// Footer year
-const y = document.getElementById('year');
-if (y) y.textContent = new Date().getFullYear();
-
-
-// Mobile hamburger toggle
+// Mobile hamburger menu toggle - FIXED VERSION
 (function(){
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
+  
   if (!toggle || !links) return;
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-    document.body.classList.toggle('no-scroll', open);
+  
+  // Toggle menu when hamburger clicked
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    document.body.classList.toggle('no-scroll', isOpen);
   });
-  // Close on link click (optional)
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    if (links.classList.contains('open')) {
+  
+  // Close menu when any link clicked
+  links.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scroll');
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (links.classList.contains('open') && 
+        !links.contains(e.target) && 
+        !toggle.contains(e.target)) {
       links.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('no-scroll');
     }
-  }));
+  });
 })();
+
+// Footer year auto-update
+const yearElement = document.getElementById('year');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
