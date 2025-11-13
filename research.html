@@ -308,207 +308,360 @@ header{
 .logo{font-size:1.5rem;font-weight:700;color:var(--primary);text-decoration:none}
 .nav-links{list-style:none;display:flex;gap:2rem;align-items:center}
 .nav a{color:var(--primary);text-decoration:none;font-weight:500;transition:color .2s}
-.nav a:hover,.nav a.active{color:var(--accent)}
-.nav-cta{background:var(--accent);color:#fff !important;padding:.6rem 1.2rem;border-radius:8px;transition:all .2s;min-height:44px;display:inline-flex;align-items:center}
-.nav-cta:hover{background:#008FC8;transform:translateY(-1px)}
-.nav-toggle{display:none;background:transparent;border:0;width:44px;height:44px;padding:0;margin-left:auto;cursor:pointer}
-.nav-toggle .bar{display:block;width:24px;height:2px;margin:5px auto;background:var(--primary);transition:transform .3s,opacity .3s}
-@media (max-width:920px){
-  .container{padding:0 1rem}
-  .nav-toggle{display:inline-block}
-  .nav-links{
-    position:fixed;left:0;right:0;top:64px;background:#fff;
-    max-height:0;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.12);
-    transition:max-height .3s ease;display:grid;gap:0
-  }
-  .nav-links.open{max-height:70vh}
-  .nav-links li{border-bottom:1px solid #EEF1F5}
-  .nav-links a{display:block;padding:14px 1.25rem;font-size:1.05rem}
-  .nav-cta{margin:.5rem 1rem 1rem;text-align:center}
-  body.no-scroll{overflow:hidden}
-}
-</style></head>
-<body>
-<!-- Navigation -->
-<header>
-<nav class="nav container">
-<a class="logo" href="index.html">Dr. Aziz Ahmed <span style="font-size: 0.6rem; font-weight: 400; opacity: 0.7; display: block; line-height: 1;">For AI & Business Transformation</span></a><button aria-expanded="false" aria-label="Open menu" class="nav-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="about.html">About</a></li><li><a href="founder.html">Founder</a></li><li><a class="nav-cta" href="contact.html">Contact Us</a></li></ul>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="case-studies.html">Case Studies</a></li>
-<li><a href="about.html">About</a></li>
-<li><a class="active" href="research.html">Research</a></li>
-<li><a href="founder.html">Founder</a></li>
-<li><a class="nav-cta" href="contact.html">Get Started</a></li>
-</ul>
-</nav>
-</header>
-<!-- Page Header -->
-<section class="page-header">
-<div class="container">
-<h1>Research &amp; Academic Contributions</h1>
-<p>Translating cutting-edge AI research into practical business solutions</p>
-</div>
-</section>
-<!-- Stats -->
-<section class="stats-section">
-<div class="container">
-<div class="stats-grid">
-<div class="stat-item">
-<h3>40+</h3>
-<p>Peer-Reviewed Publications</p>
-</div>
-<div class="stat-item">
-<h3>25+</h3>
-<p>Q1 Journal Articles</p>
-</div>
-<div class="stat-item">
-<h3>$1M+</h3>
-<p>Research Funding Secured</p>
-</div>
-<div class="stat-item">
-<h3>12th</h3>
-<p>Percentile NIH Score</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Selected Publications -->
-<section class="publications-section">
-<div class="container">
-<h2 class="section-title">Selected High-Impact Publications</h2>
-<div class="publication-card">
-<h4>Estimation of racial and language disparities in pediatric ED triage using statistical modeling and NLP</h4>
-<span class="journal-tag">JAMIA (Q1)</span>
-<span class="publication-year">2024</span>
-<p style="margin-top: 0.5rem;">Developed novel NLP framework for identifying and addressing healthcare disparities using AI</p>
-</div>
-<div class="publication-card">
-<h4>What makes accidents severe: explainable analytics framework with parameter optimization</h4>
-<span class="journal-tag">European Journal of Operational Research (Q1)</span>
-<span class="publication-year">2024</span>
-<p style="margin-top: 0.5rem;">Created explainable AI models for real-world safety applications</p>
-</div>
-<div class="publication-card">
-<h4>A study of 'left against medical advice' emergency department patients: an optimized explainable AI framework</h4>
-<span class="journal-tag">Healthcare Management Science (Q1)</span>
-<span class="publication-year">2024</span>
-<p style="margin-top: 0.5rem;">Applied machine learning to improve patient retention and care quality</p>
-</div>
-<div class="publication-card">
-<h4>An AI-Based Framework for Predicting Emergency Department Overcrowding</h4>
-<span class="journal-tag">JMIR Medical Informatics</span>
-<span class="publication-year">2025</span>
-<p style="margin-top: 0.5rem;">Developed predictive models to optimize hospital operations</p>
-</div>
-<div class="publication-card">
-<h4>Machine learning applications in studying mental health among immigrants and racial minorities</h4>
-<span class="journal-tag">BMC Medical Informatics (Q1)</span>
-<span class="publication-year">2024</span>
-<p style="margin-top: 0.5rem;">Comprehensive review of AI applications in healthcare equity</p>
-</div>
-<div class="publication-card">
-<h4>An adaptive simulated annealing-based ML approach for developing an e-triage tool</h4>
-<span class="journal-tag">Information Systems Frontiers (Q1)</span>
-<span class="publication-year">2023</span>
-<p style="margin-top: 0.5rem;">Innovative optimization approach for healthcare AI systems</p>
-</div>
-</div>
-</section>
-<!-- Grants -->
-<section class="grants-section">
-<div class="container">
-<h2 class="section-title">Research Funding</h2>
-<div class="grants-grid">
-<div class="grant-category">
-<h3>🏆 Awarded &amp; Scored Grants</h3>
-<div class="grant-item">
-<div class="grant-amount">$3.9 Million</div>
-<div class="grant-title">AI-based decision support system for mental health ED returns</div>
-<div class="grant-role">Contact PI | NIMH R01 | Scored: 12th percentile</div>
-</div>
-<div class="grant-item">
-<div class="grant-amount">$1.0 Million</div>
-<div class="grant-title">Predictive decision support for emergency department optimization</div>
-<div class="grant-role">Contact PI | AHRQ R21/R33 | 2023-2028</div>
-</div>
-<div class="grant-item">
-<div class="grant-amount">$50,000</div>
-<div class="grant-title">Evaluating rurality and racial disparities in breast cancer</div>
-<div class="grant-role">Collaborator | Breast Cancer Research Foundation of Alabama</div>
-</div>
-<div class="grant-item">
-<div class="grant-amount">$25,000</div>
-<div class="grant-title">Machine Learning Framework for ED Overcrowding</div>
-<div class="grant-role">PI | UAB School of Health Professions Pilot</div>
-</div>
-</div>
-<div class="grant-category">
-<h3>📝 Under Review</h3>
-<div class="grant-item">
-<div class="grant-amount">$2.9 Million</div>
-<div class="grant-title">Proactive AI-driven Simulation System (PASS-ED)</div>
-<div class="grant-role">Sole PI | NIBIB R01</div>
-</div>
-<div class="grant-item">
-<div class="grant-amount">$1.0 Million</div>
-<div class="grant-title">Explainable AI for Cardiovascular Health</div>
-<div class="grant-role">Multiple PI | PCORI</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="cta-section">
-<div class="container">
-<h2>Research-Backed Solutions for Your Business</h2>
-<p>Benefit from proven AI methods developed through rigorous academic research</p>
-<a class="btn" href="contact.html">Apply Research to Your Business</a>
-</div>
-</section>
-<!-- Footer -->
-<footer>
-<div class="container">
-<div class="footer-content">
-<div class="footer-section">
-<h4>Quick Links</h4>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="case-studies.html">Case Studies</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="privacy.html">Privacy</a></li>
-<li><a href="terms.html">Terms</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h4>Services</h4>
-<ul>
-<li><a href="services.html#automation">AI Automation</a></li>
-<li><a href="services.html#healthcare">Healthcare AI</a></li>
-<li><a href="services.html#analytics">Analytics</a></li>
-<li><a href="services.html#training">Training</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h4>Contact</h4>
-<ul>
-<li>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5534343d38303167152034377b303120">[email&#160;protected]</a></li>
-<li>📱 (607) 232-0242</li>
-<li>📍 Birmingham, AL</li>
-<li><a href="https://linkedin.com/in/aziz-ahmed-phd">LinkedIn</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2024 Dr. Abdulaziz Ahmed AI Consulting. All rights reserved.</p>
-</div>
-</div>
-</footer>
+.nav a:hover,.nav a.active{colo<!DOCTYPE html>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  toggle?.addEventListener('click', () => {
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Research Publications and Grants - Dr. Aziz Ahmed's academic contributions to AI and healthcare informatics" name="description"/>
+<title>Research | Dr. Aziz Ahmed AI Consulting</title>
+<style>
+        :root {
+            --primary: #0A1931;
+            --accent: #00A8E8;
+            --text: #1A1A1A;
+            --light: #F5F7FA;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, #1E3A5F 100%);
+            --success: #2e7d32;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--white);
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
+        }
+        
+        /* Header and Navigation */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            background: var(--accent);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background: #008FC8;
+            transform: translateY(-2px);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 3rem 0;
+            background: var(--light);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Publications Section */
+        .publications-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .publication-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .publication-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .journal-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+        
+        .publication-year {
+            color: #666;
+            font-weight: 600;
+        }
+        
+        /* Grants Section */
+        .grants-section {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+        
+        .grants-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .grant-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .grant-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .grant-item {
+            padding: 1rem;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 1rem;
+            background: var(--light);
+            border-radius: 4px;
+        }
+        
+        .grant-amount {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .grant-title {
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+        
+        .grant-role {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 1.1rem;
+            background: white;
+            color: var(--primary);
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-section a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+/* Injected shared header styles (nav consistency) */
+:root{
+  --primary:#0A1931;
+  --accent:#00A8E8;
+  --text:#1A1A1A;
+  --light:#F5F7FA;
+  --white:#FFFFFF;
+}
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(140%) blur(6px);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-size:1.5rem;font-weight:700;color:var(--primary);text-decoration:none}
+.
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Mobile hamburger menu toggle - FIXED VERSION
+    (function(){
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+      
+      if (!toggle || !links) return;
+      
+      // Toggle menu when hamburger clicked
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        document.body.classList.toggle('no-scroll', isOpen);
+      });
+      
+      // Close menu when any link clicked
+      links.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('no-scroll');
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (links.classList.contains('open') && 
+            !links.contains(e.target) && 
+            !toggle.contains(e.target)) {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('no-scroll');
+        }
+      });
+    })();
+
+    // Footer year auto-update
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
